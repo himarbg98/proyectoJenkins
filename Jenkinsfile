@@ -16,7 +16,7 @@ pipeline {
             }
             stage ('Pasamos a producción') {
                 steps {
-                    bat "Movemos al servidor y lo ponemos en producción"
+                    echo "Movemos al servidor y lo ponemos en producción"
             }
         }
     }
