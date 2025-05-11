@@ -3,17 +3,17 @@ pipeline {
         stages {
             stage ('test') {
                 steps {
-                    sh "mvn clean compile test"
+                    bat "mvn clean compile test"
             }
             }
             stage ('Build application') {
                 steps {
-                    sh "mvn -f pom.xml clean install -Dmaven.test.skip=true"
+                    bat "mvn -f pom.xml clean install -Dmaven.test.skip=true"
             }
             }
             stage ('Pasamos a producción') {
                 steps {
-                    echo "Movemos al servidor y lo ponemos en producción"
+                    bat "Movemos al servidor y lo ponemos en producción"
             }
         }
     }
